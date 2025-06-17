@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(42, 78%, 95%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(20, 60%, 55%);
+  --primary-foreground: hsl(60, 9.1%, 97.8%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(43, 74%, 66%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Angola-inspired color palette */
+  --terra-cotta: hsl(20, 60%, 55%);
+  --warm-clay: hsl(43, 74%, 34%);
+  --golden-amber: hsl(43, 74%, 66%);
+  --sunset-orange: hsl(20, 100%, 69%);
+  --warm-beige: hsl(60, 56%, 91%);
+  --deep-brown: hsl(20, 56%, 27%);
+  --sage-green: hsl(86, 20%, 68%);
+  --cream: hsl(54, 100%, 95%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(20, 60%, 55%);
+  --primary-foreground: hsl(60, 9.1%, 97.8%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .terra-cotta {
+    color: var(--terra-cotta);
+  }
+  
+  .bg-terra-cotta {
+    background-color: var(--terra-cotta);
+  }
+  
+  .warm-clay {
+    color: var(--warm-clay);
+  }
+  
+  .bg-warm-clay {
+    background-color: var(--warm-clay);
+  }
+  
+  .golden-amber {
+    color: var(--golden-amber);
+  }
+  
+  .bg-golden-amber {
+    background-color: var(--golden-amber);
+  }
+  
+  .sunset-orange {
+    color: var(--sunset-orange);
+  }
+  
+  .bg-sunset-orange {
+    background-color: var(--sunset-orange);
+  }
+  
+  .warm-beige {
+    color: var(--warm-beige);
+  }
+  
+  .bg-warm-beige {
+    background-color: var(--warm-beige);
+  }
+  
+  .deep-brown {
+    color: var(--deep-brown);
+  }
+  
+  .bg-deep-brown {
+    background-color: var(--deep-brown);
+  }
+  
+  .sage-green {
+    color: var(--sage-green);
+  }
+  
+  .bg-sage-green {
+    background-color: var(--sage-green);
+  }
+  
+  .cream {
+    color: var(--cream);
+  }
+  
+  .bg-cream {
+    background-color: var(--cream);
+  }
+}
+
+.parallax-element {
+  transition: transform 0.1s ease-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.2);
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.angola-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(218, 165, 32, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(210, 105, 30, 0.1) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+.virtual-tour-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.tour-hotspot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(218, 165, 32, 0.9);
+  border: 3px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.tour-hotspot:hover {
+  transform: scale(1.2);
+  background: rgba(218, 165, 32, 1);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(218, 165, 32, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(218, 165, 32, 0); }
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+  z-index: 100;
+  animation: bounce 2s infinite;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 25px rgba(0,0,0,0.4);
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+  40%, 43% { transform: translateY(-30px); }
+  70% { transform: translateY(-15px); }
+  90% { transform: translateY(-4px); }
+}
+
+.pannellum-container {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
