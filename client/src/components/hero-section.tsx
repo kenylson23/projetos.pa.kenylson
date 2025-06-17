@@ -26,8 +26,8 @@ export default function HeroSection() {
         style={{ transform: `translateY(${parallaxOffset}px)` }}
       >
         <img
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200"
-          alt="Angola landscape with baobab trees at sunset"
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200"
+          alt="Serene spa treatment room with candles, warm lighting and natural stone elements"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-deep-brown/70 via-terra-cotta/50 to-transparent"></div>
