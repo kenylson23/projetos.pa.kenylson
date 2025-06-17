@@ -212,11 +212,21 @@ export default function VirtualTourSection() {
       {/* 360° Virtual Tour Modal */}
       {isFullscreen && selectedSpace && (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+          {/* Close button - top right */}
           <button
             onClick={closeTour}
-            className="absolute top-4 right-4 z-60 bg-golden-amber hover:bg-warm-clay text-white p-3 rounded-full transition-colors"
+            className="absolute top-4 right-4 z-60 bg-golden-amber hover:bg-warm-clay text-white p-3 rounded-full transition-colors shadow-lg"
           >
             <X size={24} />
+          </button>
+          
+          {/* Exit button - top center */}
+          <button
+            onClick={closeTour}
+            className="absolute top-4 left-1/2 transform -translate-x-1/2 z-60 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition-colors shadow-lg flex items-center space-x-2"
+          >
+            <X size={20} />
+            <span className="font-medium">Sair do Tour</span>
           </button>
           
           <div className="w-full h-full relative">
