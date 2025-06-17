@@ -1,51 +1,143 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Play, Maximize } from "lucide-react";
+import { Play, X, Eye } from "lucide-react";
 
 const virtualSpaces = [
   {
     id: 1,
     name: "Recepção Principal",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    panorama: "https://pannellum.org/images/bma-0.jpg", // Demo 360° image - replace with your own
+    preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa reception area with modern African-inspired decor and warm lighting",
     hotspots: [
-      { x: 20, y: 30, info: "Recepção - Área de boas-vindas com chá tradicional" },
-      { x: 70, y: 50, info: "Sala de Relaxamento - Poltronas confortáveis para descanso" },
-      { x: 40, y: 70, info: "Jardim Interno - Plantas nativas de Angola" }
+      { 
+        pitch: -2, 
+        yaw: 15, 
+        type: "info", 
+        text: "Recepção", 
+        info: "Área de boas-vindas com chá tradicional angolano" 
+      },
+      { 
+        pitch: 5, 
+        yaw: 90, 
+        type: "info", 
+        text: "Relaxamento", 
+        info: "Poltronas confortáveis para descanso" 
+      },
+      { 
+        pitch: -10, 
+        yaw: 180, 
+        type: "info", 
+        text: "Jardim", 
+        info: "Plantas nativas de Angola" 
+      }
     ]
   },
   {
     id: 2,
     name: "Salas de Tratamento",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    panorama: "https://pannellum.org/images/alma.jpg", // Demo 360° image - replace with your own
+    preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa treatment room with natural stone elements and warm African textiles",
     hotspots: [
-      { x: 30, y: 40, info: "Mesa de Massagem - Equipamento premium para tratamentos" },
-      { x: 80, y: 60, info: "Área de Óleos - Essências naturais angolanas" },
-      { x: 60, y: 25, info: "Sistema de Som - Música ambiente relaxante" }
+      { 
+        pitch: 0, 
+        yaw: 30, 
+        type: "info", 
+        text: "Mesa de Massagem", 
+        info: "Equipamento premium para tratamentos de spa" 
+      },
+      { 
+        pitch: 10, 
+        yaw: 120, 
+        type: "info", 
+        text: "Óleos Essenciais", 
+        info: "Essências naturais extraídas da flora angolana" 
+      },
+      { 
+        pitch: -5, 
+        yaw: 270, 
+        type: "info", 
+        text: "Sistema de Som", 
+        info: "Música ambiente para relaxamento profundo" 
+      }
     ]
   }
 ];
 
+declare global {
+  interface Window {
+    pannellum: any;
+  }
+}
+
 export default function VirtualTourSection() {
   const { ref: tourRef, isInView } = useScrollAnimation();
-  const [selectedHotspot, setSelectedHotspot] = useState<string | null>(null);
+  const [selectedSpace, setSelectedSpace] = useState<number | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [pannellumViewer, setPannellumViewer] = useState<any>(null);
+  const panoramaRef = useRef<HTMLDivElement>(null);
 
-  const handleHotspotClick = (info: string) => {
-    setSelectedHotspot(info);
-    setTimeout(() => setSelectedHotspot(null), 3000);
+  const openVirtualTour = (spaceId: number) => {
+    const space = virtualSpaces.find(s => s.id === spaceId);
+    if (!space) return;
+
+    setSelectedSpace(spaceId);
+    setIsFullscreen(true);
+
+    // Initialize Pannellum viewer after the modal opens
+    setTimeout(() => {
+      if (panoramaRef.current && window.pannellum) {
+        const viewer = window.pannellum.viewer(panoramaRef.current, {
+          type: "equirectangular",
+          panorama: space.panorama,
+          autoLoad: true,
+          autoRotate: -2,
+          compass: true,
+          showZoomCtrl: true,
+          showFullscreenCtrl: false,
+          showControls: true,
+          hotSpots: space.hotspots.map((hotspot, index) => ({
+            ...hotspot,
+            id: `hotspot-${index}`,
+            createTooltipFunc: (hotSpotDiv: HTMLElement) => {
+              const tooltip = document.createElement('div');
+              tooltip.className = 'tour-tooltip bg-golden-amber text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium';
+              tooltip.textContent = hotspot.info;
+              hotSpotDiv.appendChild(tooltip);
+            },
+            createTooltipArgs: hotspot.text
+          }))
+        });
+        setPannellumViewer(viewer);
+      }
+    }, 100);
+  };
+
+  const closeTour = () => {
+    setIsFullscreen(false);
+    setSelectedSpace(null);
+    if (pannellumViewer) {
+      pannellumViewer.destroy();
+      setPannellumViewer(null);
+    }
   };
 
   const startFullTour = () => {
-    // In a real implementation, this would open a full 360° tour
-    alert("Tour completo será implementado com tecnologia 360° avançada!");
+    openVirtualTour(1); // Start with first space
   };
 
-  const openFullscreen = () => {
-    // In a real implementation, this would open the tour in fullscreen
-    alert("Modo tela cheia será implementado!");
-  };
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        closeTour();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isFullscreen]);
 
   return (
     <section id="tour-virtual" className="py-20 bg-deep-brown">
@@ -76,38 +168,26 @@ export default function VirtualTourSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="virtual-tour-container relative"
+              className="virtual-tour-container relative group cursor-pointer"
+              onClick={() => openVirtualTour(space.id)}
             >
               <img
-                src={space.image}
+                src={space.preview}
                 alt={space.alt}
-                className="w-full h-96 object-cover"
+                className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               
-              {/* Interactive Hotspots */}
-              {space.hotspots.map((hotspot, hotspotIndex) => (
-                <div
-                  key={hotspotIndex}
-                  className="tour-hotspot cursor-pointer"
-                  style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
-                  onClick={() => handleHotspotClick(hotspot.info)}
-                />
-              ))}
-              
-              <div className="absolute bottom-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg">
-                <p className="text-sm">{space.name}</p>
+              {/* Play button overlay */}
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="bg-golden-amber rounded-full p-6 transform transition-transform duration-300 group-hover:scale-110">
+                  <Eye size={32} className="text-white" />
+                </div>
               </div>
               
-              {selectedHotspot && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  className="absolute top-4 left-4 right-4 bg-golden-amber text-white p-4 rounded-lg shadow-lg"
-                >
-                  <p className="text-sm font-medium">{selectedHotspot}</p>
-                </motion.div>
-              )}
+              <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-lg">
+                <p className="text-sm font-medium">{space.name}</p>
+                <p className="text-xs text-white/80">Clique para explorar em 360°</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -126,15 +206,56 @@ export default function VirtualTourSection() {
             <Play size={20} />
             <span>Iniciar Tour Completo</span>
           </button>
-          <button
-            onClick={openFullscreen}
-            className="bg-transparent border-2 border-golden-amber text-golden-amber hover:bg-golden-amber hover:text-white px-6 py-3 rounded-full transition-all flex items-center space-x-2"
-          >
-            <Maximize size={20} />
-            <span>Tela Cheia</span>
-          </button>
         </motion.div>
       </div>
+
+      {/* 360° Virtual Tour Modal */}
+      {isFullscreen && selectedSpace && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+          <button
+            onClick={closeTour}
+            className="absolute top-4 right-4 z-60 bg-golden-amber hover:bg-warm-clay text-white p-3 rounded-full transition-colors"
+          >
+            <X size={24} />
+          </button>
+          
+          <div className="w-full h-full relative">
+            <div 
+              ref={panoramaRef} 
+              className="w-full h-full pannellum-container"
+              style={{ borderRadius: 0 }}
+            />
+            
+            {/* Navigation between spaces */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {virtualSpaces.map((space) => (
+                <button
+                  key={space.id}
+                  onClick={() => openVirtualTour(space.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedSpace === space.id
+                      ? 'bg-golden-amber text-white'
+                      : 'bg-white/20 text-white hover:bg-white/30'
+                  }`}
+                >
+                  {space.name}
+                </button>
+              ))}
+            </div>
+            
+            {/* Instructions */}
+            <div className="absolute top-4 left-4 bg-black/70 text-white p-4 rounded-lg max-w-sm">
+              <p className="text-sm font-medium mb-2">Como navegar:</p>
+              <ul className="text-xs space-y-1">
+                <li>• Arraste para olhar ao redor</li>
+                <li>• Use a roda do mouse para zoom</li>
+                <li>• Clique nos pontos dourados para informações</li>
+                <li>• Pressione ESC para sair</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
