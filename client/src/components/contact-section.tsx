@@ -180,7 +180,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Seu nome completo"
-                      className="bg-white/20 border-white/30 text-white placeholder-white/60 focus:border-golden-amber focus:bg-white/30"
+                      className="bg-white/30 border-white/50 text-white placeholder-white/70 focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50"
                       required
                     />
                   </div>
@@ -192,7 +192,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+244 9XX XXX XXX"
-                      className="bg-white/20 border-white/30 text-white placeholder-white/60 focus:border-golden-amber focus:bg-white/30"
+                      className="bg-white/30 border-white/50 text-white placeholder-white/70 focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50"
                       required
                     />
                   </div>
@@ -200,12 +200,12 @@ export default function ContactSection() {
                   <div>
                     <label className="block cream font-semibold mb-2">Serviço Desejado</label>
                     <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
-                      <SelectTrigger className="bg-white/20 border-white/30 text-white focus:border-golden-amber focus:bg-white/30">
-                        <SelectValue placeholder="Selecione um serviço" />
+                      <SelectTrigger className="bg-white/30 border-white/50 text-white focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50 [&>span]:text-white [&>span]:placeholder-white/70">
+                        <SelectValue placeholder="Selecione um serviço" className="text-white" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white border-gray-200">
                         {services.map((service) => (
-                          <SelectItem key={service.value} value={service.value}>
+                          <SelectItem key={service.value} value={service.value} className="text-gray-900 hover:bg-golden-amber/10">
                             {service.label}
                           </SelectItem>
                         ))}
@@ -220,19 +220,19 @@ export default function ContactSection() {
                         type="date"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className="bg-white/20 border-white/30 text-white focus:border-golden-amber focus:bg-white/30"
+                        className="bg-white/30 border-white/50 text-white focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
                         required
                       />
                     </div>
                     <div>
                       <label className="block cream font-semibold mb-2">Horário</label>
                       <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, time: value })}>
-                        <SelectTrigger className="bg-white/20 border-white/30 text-white focus:border-golden-amber focus:bg-white/30">
-                          <SelectValue placeholder="Selecione" />
+                        <SelectTrigger className="bg-white/30 border-white/50 text-white focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50 [&>span]:text-white [&>span]:placeholder-white/70">
+                          <SelectValue placeholder="Selecione" className="text-white" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white border-gray-200">
                           {timeSlots.map((slot) => (
-                            <SelectItem key={slot.value} value={slot.value}>
+                            <SelectItem key={slot.value} value={slot.value} className="text-gray-900 hover:bg-golden-amber/10">
                               {slot.label}
                             </SelectItem>
                           ))}
@@ -247,7 +247,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Alguma observação especial..."
-                      className="bg-white/20 border-white/30 text-white placeholder-white/60 focus:border-golden-amber focus:bg-white/30"
+                      className="bg-white/30 border-white/50 text-white placeholder-white/70 focus:border-golden-amber focus:bg-white/40 focus:ring-2 focus:ring-golden-amber/50"
                       rows={4}
                     />
                   </div>
