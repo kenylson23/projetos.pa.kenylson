@@ -88,7 +88,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold cream mb-6"
+            className="text-4xl md:text-5xl font-bold text-cream mb-6"
           >
             Contacte-nos
           </motion.h2>
@@ -96,7 +96,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl cream/80 max-w-3xl mx-auto"
+            className="text-xl text-cream/80 max-w-3xl mx-auto"
           >
             Reserve a sua experiência de bem-estar ou tire as suas dúvidas
           </motion.p>
@@ -109,7 +109,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold cream mb-8">Informações de Contacto</h3>
+            <h3 className="text-2xl font-bold text-cream mb-8">Informações de Contacto</h3>
             
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -124,8 +124,8 @@ export default function ContactSection() {
                     <info.icon className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="cream font-semibold">{info.title}</p>
-                    <p className="cream/80 whitespace-pre-line">{info.content}</p>
+                    <p className="text-cream font-semibold">{info.title}</p>
+                    <p className="text-cream/80 whitespace-pre-line">{info.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -138,7 +138,7 @@ export default function ContactSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-12"
             >
-              <h4 className="text-xl font-semibold cream mb-4">Siga-nos</h4>
+              <h4 className="text-xl font-semibold text-cream mb-4">Siga-nos</h4>
               <div className="flex space-x-4">
                 <a
                   href="#"
@@ -170,11 +170,11 @@ export default function ContactSection() {
           >
             <Card className="bg-white/15 backdrop-blur-md border-white/30 shadow-2xl">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cream mb-6">Faça a Sua Reserva</h3>
+                <h3 className="text-2xl font-bold text-cream mb-6">Faça a Sua Reserva</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6 contact-form">
                   <div>
-                    <label className="block cream font-semibold mb-2">Nome Completo</label>
+                    <label className="block text-cream font-semibold mb-2">Nome Completo</label>
                     <Input
                       type="text"
                       value={formData.name}
@@ -186,7 +186,7 @@ export default function ContactSection() {
                   </div>
                   
                   <div>
-                    <label className="block cream font-semibold mb-2">Telefone</label>
+                    <label className="block text-cream font-semibold mb-2">Telefone</label>
                     <Input
                       type="tel"
                       value={formData.phone}
@@ -198,7 +198,7 @@ export default function ContactSection() {
                   </div>
                   
                   <div>
-                    <label className="block cream font-semibold mb-2">Serviço Desejado</label>
+                    <label className="block text-cream font-semibold mb-2">Serviço Desejado</label>
                     <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
                       <SelectTrigger className="bg-white/40 border-white/60 text-white focus:border-golden-amber focus:bg-white/50 focus:ring-2 focus:ring-golden-amber/50 h-12">
                         <SelectValue placeholder="Selecione um serviço" className="text-white placeholder:text-white/70" />
@@ -215,7 +215,7 @@ export default function ContactSection() {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block cream font-semibold mb-2">Data</label>
+                      <label className="block text-cream font-semibold mb-2">Data</label>
                       <Input
                         type="date"
                         value={formData.date}
@@ -226,7 +226,7 @@ export default function ContactSection() {
                       />
                     </div>
                     <div>
-                      <label className="block cream font-semibold mb-2">Horário</label>
+                      <label className="block text-cream font-semibold mb-2">Horário</label>
                       <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, time: value })}>
                         <SelectTrigger className="bg-white/40 border-white/60 text-white focus:border-golden-amber focus:bg-white/50 focus:ring-2 focus:ring-golden-amber/50 h-12">
                           <SelectValue placeholder="Selecione" className="text-white placeholder:text-white/70" />
@@ -243,7 +243,7 @@ export default function ContactSection() {
                   </div>
                   
                   <div>
-                    <label className="block cream font-semibold mb-2">Mensagem (Opcional)</label>
+                    <label className="block text-cream font-semibold mb-2">Mensagem (Opcional)</label>
                     <Textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -260,11 +260,11 @@ export default function ContactSection() {
                     Confirmar Reserva
                   </Button>
                   
-                  <p className="cream/60 text-sm text-center">
+                  <p className="text-cream/60 text-sm text-center">
                     Ou contacte-nos diretamente via WhatsApp:{" "}
                     <a
                       href="https://wa.me/244949639932"
-                      className="golden-amber hover:underline"
+                      className="text-golden-amber hover:underline"
                     >
                       +244 949 639 932
                     </a>
@@ -285,9 +285,9 @@ export default function ContactSection() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-3xl font-bold golden-amber mb-4">Spa Kenylson</h3>
-            <p className="cream/80 mb-6">Bem-estar autêntico inspirado na essência de Angola</p>
-            <p className="cream/60 text-sm">
+            <h3 className="text-3xl font-bold text-golden-amber mb-4">Spa Kenylson</h3>
+            <p className="text-cream/80 mb-6">Bem-estar autêntico inspirado na essência de Angola</p>
+            <p className="text-cream/60 text-sm">
               © 2024 Spa Kenylson. Todos os direitos reservados. | Luanda, Angola
             </p>
           </div>
