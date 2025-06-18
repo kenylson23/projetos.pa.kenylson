@@ -8,7 +8,7 @@ const virtualSpaces = [
     id: 1,
     name: "Recepção Principal",
     panorama: "/spa-kenylson-reception-360.svg", // Imagem panorâmica 360° baseada na recepção real
-    preview: "/attached_assets/Gemini_Generated_Image_jk5qodjk5qodjk5q_1750252460925.png", // Sua imagem real da recepção para preview
+    preview: "/attached_assets/Gemini_Generated_Image_jk5qodjk5qodjk5q_1750251229412.png", // Sua imagem real da recepção para preview
     alt: "Vista panorâmica 360° da recepção do spa com decoração africana moderna e iluminação acolhedora",
     hotspots: [
       { 
