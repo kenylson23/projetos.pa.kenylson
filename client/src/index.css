@@ -244,3 +244,40 @@
   border-radius: 20px !important;
   overflow: hidden !important;
 }
+
+/* Contact Form Improvements */
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.8);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Improve Select component visibility */
+.contact-form [data-radix-select-trigger] {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.contact-form [data-radix-select-content] {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Better placeholder visibility */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1;
+}
+
+/* Enhanced focus states */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form [data-radix-select-trigger]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.5), 0 0 0 4px rgba(218, 165, 32, 0.2);
+}
