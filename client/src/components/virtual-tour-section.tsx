@@ -272,21 +272,21 @@ export default function VirtualTourSection() {
       {/* 360° Virtual Tour Modal */}
       {isFullscreen && selectedSpace && (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-          {/* Close button - top right */}
+          {/* Exit button - top left - mais visível */}
           <button
             onClick={closeTour}
-            className="absolute top-4 right-4 z-60 bg-golden-amber hover:bg-warm-clay text-white p-3 rounded-full transition-colors shadow-lg"
+            className="absolute top-6 left-6 z-60 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full transition-colors shadow-2xl flex items-center space-x-3 text-lg font-bold border-2 border-white"
           >
             <X size={24} />
+            <span>SAIR DO TOUR</span>
           </button>
           
-          {/* Exit button - top center */}
+          {/* Close button - top right - alternativo */}
           <button
             onClick={closeTour}
-            className="absolute top-4 left-1/2 transform -translate-x-1/2 z-60 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full transition-colors shadow-lg flex items-center space-x-2"
+            className="absolute top-6 right-6 z-60 bg-black/80 hover:bg-black text-white p-4 rounded-full transition-colors shadow-2xl border-2 border-white"
           >
-            <X size={20} />
-            <span className="font-medium">Sair do Tour</span>
+            <X size={28} />
           </button>
           
           <div className="w-full h-full relative">
@@ -314,13 +314,14 @@ export default function VirtualTourSection() {
             </div>
             
             {/* Instructions */}
-            <div className="absolute top-4 left-4 bg-black/70 text-white p-4 rounded-lg max-w-sm">
-              <p className="text-sm font-medium mb-2">Como navegar:</p>
+            <div className="absolute bottom-6 left-6 bg-black/80 text-white p-4 rounded-lg max-w-sm border border-white/30">
+              <p className="text-sm font-bold mb-2 text-golden-amber">Como navegar:</p>
               <ul className="text-xs space-y-1">
                 <li>• Arraste para olhar ao redor</li>
                 <li>• Use a roda do mouse para zoom</li>
                 <li>• Clique nos pontos dourados para informações</li>
-                <li>• Pressione ESC para sair</li>
+                <li>• <span className="text-red-400 font-bold">Clique "SAIR DO TOUR" para fechar</span></li>
+                <li>• Ou pressione tecla ESC</li>
               </ul>
             </div>
           </div>
