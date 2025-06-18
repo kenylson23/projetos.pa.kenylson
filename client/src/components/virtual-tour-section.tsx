@@ -7,7 +7,7 @@ const virtualSpaces = [
   {
     id: 1,
     name: "Recepção Principal",
-    panorama: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa reception 360° view
+    panorama: "/images/360-tour/recepcao-360.jpg", // Substitua pela sua imagem 360° da recepção
     preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa reception area with modern African-inspired decor and warm lighting",
     hotspots: [
@@ -37,7 +37,7 @@ const virtualSpaces = [
   {
     id: 2,
     name: "Salas de Tratamento",
-    panorama: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa treatment room 360° view
+    panorama: "/images/360-tour/sala-tratamento-360.jpg", // Substitua pela sua imagem 360° da sala de tratamento
     preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa treatment room with natural stone elements and warm African textiles",
     hotspots: [
@@ -67,7 +67,7 @@ const virtualSpaces = [
   {
     id: 3,
     name: "Área de Relaxamento",
-    panorama: "https://images.unsplash.com/photo-1591343395082-e120087004b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa relaxation area 360° view
+    panorama: "/images/360-tour/area-relaxamento-360.jpg", // Substitua pela sua imagem 360° da área de relaxamento
     preview: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "Vista 360° da área de relaxamento com assentos confortáveis e iluminação ambiente",
     hotspots: [
@@ -97,7 +97,7 @@ const virtualSpaces = [
   {
     id: 4,
     name: "Sala de Meditação",
-    panorama: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Meditation room 360° view
+    panorama: "/images/360-tour/sala-meditacao-360.jpg", // Substitua pela sua imagem 360° da sala de meditação
     preview: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "Vista 360° da sala de meditação com almofadas tradicionais e ambiente sereno",
     hotspots: [
