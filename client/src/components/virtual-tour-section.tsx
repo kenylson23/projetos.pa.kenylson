@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Play, X, Eye } from "lucide-react";
+import { Play, X, Eye, Sparkles } from "lucide-react";
 
 const virtualSpaces = [
   {
@@ -137,6 +137,7 @@ export default function VirtualTourSection() {
   const [selectedSpace, setSelectedSpace] = useState<number | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [pannellumViewer, setPannellumViewer] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const panoramaRef = useRef<HTMLDivElement>(null);
 
   const openVirtualTour = (spaceId: number) => {

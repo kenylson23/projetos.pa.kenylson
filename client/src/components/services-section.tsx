@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 
 const services = [
   {
@@ -56,6 +57,7 @@ const services = [
 
 export default function ServicesSection() {
   const { ref: servicesRef, isInView } = useScrollAnimation();
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const openWhatsAppBooking = (serviceName: string) => {
     const message = `Olá! Gostaria de reservar o serviço: ${serviceName} no Spa Kenylson.`;
@@ -91,10 +93,24 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
+              onHoverStart={() => setHoveredCard(service.id)}
+              onHoverEnd={() => setHoveredCard(null)}
+              whileHover={{ 
+                scale: 1.05,
+                rotateY: 5,
+                z: 50,
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Card className={`overflow-hidden shadow-xl hover-lift transition-all duration-300 ${
+              <Card className={`overflow-hidden shadow-xl transition-all duration-500 relative group ${
                 service.isSpecial ? 'bg-gradient-to-br from-terra-cotta to-golden-amber text-white' : 'bg-white'
-              }`}>
+              }`}
+              style={{
+                transformStyle: 'preserve-3d',
+                boxShadow: hoveredCard === service.id 
+                  ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' 
+                  : '0 10px 25px -3px rgba(0, 0, 0, 0.1)'
+              }}>
                 <img
                   src={service.image}
                   alt={service.alt}
