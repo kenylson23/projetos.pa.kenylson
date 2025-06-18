@@ -97,7 +97,7 @@ const virtualSpaces = [
   {
     id: 4,
     name: "Sala de Meditação",
-    panorama: "/spa-meditation-360.svg", // Imagem panorâmica 360° da sala de meditação
+    panorama: "/spa-kenylson-meditation-360.svg", // Imagem panorâmica 360° da sala de meditação
     preview: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "Vista panorâmica 360° da sala de meditação com almofadas tradicionais e altar sagrado",
     hotspots: [
