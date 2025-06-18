@@ -276,7 +276,6 @@ export default function ContactSection() {
           </motion.div>
         </div>
       </div>
-
       {/* Footer */}
       <motion.footer
         initial={{ opacity: 0, y: 30 }}
@@ -288,9 +287,7 @@ export default function ContactSection() {
           <div className="text-center">
             <h3 className="text-3xl font-bold text-golden-amber mb-4">Spa Kenylson</h3>
             <p className="text-cream/80 mb-6">Bem-estar autêntico inspirado na essência de Angola</p>
-            <p className="text-cream/60 text-sm">
-              © 2024 Spa Kenylson. Todos os direitos reservados. | Luanda, Angola
-            </p>
+            <p className="text-cream/60 text-sm">© 2025 Kenylson Lourenço. Todos os direitos reservados. | Luanda, Angola</p>
           </div>
         </div>
       </motion.footer>
