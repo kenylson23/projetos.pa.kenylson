@@ -148,7 +148,9 @@ export default function ContactSection() {
                   <Facebook className="text-white" size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/keny_ggg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-golden-amber rounded-full flex items-center justify-center hover:bg-warm-clay transition-colors"
                 >
                   <Instagram className="text-white" size={20} />
