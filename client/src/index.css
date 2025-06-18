@@ -284,25 +284,31 @@
 
 /* Ensure text colors are properly applied */
 .text-cream {
-  color: hsl(54, 100%, 95%) !important;
+  color: hsl(0, 0%, 100%) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-cream\/80 {
-  color: hsla(54, 100%, 95%, 0.8) !important;
+  color: hsla(0, 0%, 100%, 0.9) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-cream\/60 {
-  color: hsla(54, 100%, 95%, 0.6) !important;
+  color: hsla(0, 0%, 100%, 0.8) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-golden-amber {
-  color: hsl(43, 74%, 66%) !important;
+  color: hsl(43, 74%, 50%) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
 }
 
 /* Fix label visibility in forms */
 .contact-form label {
-  color: hsl(54, 100%, 95%) !important;
-  font-weight: 600;
+  color: hsl(0, 0%, 100%) !important;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   display: block;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }

@@ -88,7 +88,8 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl font-bold text-cream mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
           >
             Contacte-nos
           </motion.h2>
@@ -109,7 +110,7 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-cream mb-8">Informações de Contacto</h3>
+            <h3 className="text-2xl font-bold text-white mb-8" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Informações de Contacto</h3>
             
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
@@ -168,9 +169,9 @@ export default function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Card className="bg-white/15 backdrop-blur-md border-white/30 shadow-2xl">
+            <Card className="bg-black/60 backdrop-blur-md border-white/30 shadow-2xl">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-cream mb-6">Faça a Sua Reserva</h3>
+                <h3 className="text-2xl font-bold text-white mb-6" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Faça a Sua Reserva</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6 contact-form">
                   <div>
