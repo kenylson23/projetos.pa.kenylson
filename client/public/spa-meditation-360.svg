@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="4096" height="2048" viewBox="0 0 4096 2048" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7f4f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ebe6df;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="floorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="softLight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#fff8dc;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fff8dc;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="incenseSmoke" cx="50%" cy="100%" r="30%">
+      <stop offset="0%" style="stop-color:#d3d3d3;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#d3d3d3;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Floor -->
+  <rect x="0" y="1400" width="4096" height="648" fill="url(#floorGradient)"/>
+  
+  <!-- Walls -->
+  <rect x="0" y="200" width="4096" height="1200" fill="url(#wallGradient)"/>
+  
+  <!-- Meditation altar (center) -->
+  <g transform="translate(1900, 1300)">
+    <!-- Altar base -->
+    <rect x="0" y="0" width="300" height="150" fill="#654321" rx="10"/>
+    <rect x="15" y="15" width="270" height="120" fill="#8b4513" rx="8"/>
+    
+    <!-- Altar top -->
+    <ellipse cx="150" cy="25" rx="140" ry="30" fill="#a0522d"/>
+    
+    <!-- Buddha statue -->
+    <circle cx="150" cy="0" r="25" fill="#daa520"/>
+    <rect x="140" y="-5" width="20" height="20" fill="#cd853f" rx="3"/>
+    
+    <!-- Incense holder -->
+    <rect x="100" y="10" width="15" height="5" fill="#8b4513"/>
+    <rect x="107" y="-10" width="1" height="20" fill="#654321"/>
+    <!-- Incense smoke -->
+    <path d="M107,-10 Q105,-20 107,-30 Q109,-40 107,-50" stroke="#d3d3d3" stroke-width="1" fill="none" opacity="0.5"/>
+    
+    <!-- Candles -->
+    <rect x="70" y="5" width="8" height="20" fill="#daa520" rx="1"/>
+    <circle cx="74" cy="0" r="2" fill="#ffa500" opacity="0.8"/>
+    
+    <rect x="220" y="5" width="8" height="20" fill="#daa520" rx="1"/>
+    <circle cx="224" cy="0" r="2" fill="#ffa500" opacity="0.8"/>
+    
+    <!-- Offering bowls -->
+    <ellipse cx="120" cy="15" rx="12" ry="6" fill="#8b4513"/>
+    <ellipse cx="180" cy="15" rx="12" ry="6" fill="#8b4513"/>
+  </g>
+  
+  <!-- Meditation cushions arranged in circle -->
+  <g transform="translate(1600, 1450)">
+    <!-- Cushion 1 -->
+    <circle cx="0" cy="0" r="40" fill="#cd853f"/>
+    <circle cx="0" cy="0" r="30" fill="#daa520"/>
+    
+    <!-- Cushion 2 -->
+    <circle cx="200" cy="0" r="40" fill="#8b4513"/>
+    <circle cx="200" cy="0" r="30" fill="#a0522d"/>
+    
+    <!-- Cushion 3 -->
+    <circle cx="400" cy="0" r="40" fill="#d2691e"/>
+    <circle cx="400" cy="0" r="30" fill="#cd853f"/>
+    
+    <!-- Cushion 4 -->
+    <circle cx="600" cy="0" r="40" fill="#daa520"/>
+    <circle cx="600" cy="0" r="30" fill="#f4a460"/>
+    
+    <!-- Center meditation mat -->
+    <circle cx="300" cy="-200" r="80" fill="#8b4513"/>
+    <circle cx="300" cy="-200" r="65" fill="#cd853f"/>
+    <circle cx="300" cy="-200" r="50" fill="#daa520"/>
+  </g>
+  
+  <!-- Wall tapestries -->
+  <g transform="translate(800, 400)">
+    <!-- Tapestry 1 -->
+    <rect x="0" y="0" width="200" height="300" fill="#8b4513" rx="10"/>
+    <rect x="20" y="20" width="160" height="260" fill="#f5deb3" rx="5"/>
+    
+    <!-- African pattern -->
+    <circle cx="100" cy="100" r="30" fill="#cd853f"/>
+    <circle cx="100" cy="100" r="20" fill="#daa520"/>
+    <circle cx="100" cy="100" r="10" fill="#8b4513"/>
+    
+    <circle cx="70" cy="160" r="15" fill="#cd853f"/>
+    <circle cx="130" cy="160" r="15" fill="#cd853f"/>
+    <circle cx="70" cy="220" r="15" fill="#daa520"/>
+    <circle cx="130" cy="220" r="15" fill="#daa520"/>
+  </g>
+  
+  <g transform="translate(3000, 400)">
+    <!-- Tapestry 2 -->
+    <rect x="0" y="0" width="200" height="300" fill="#8b4513" rx="10"/>
+    <rect x="20" y="20" width="160" height="260" fill="#f5deb3" rx="5"/>
+    
+    <!-- Geometric pattern -->
+    <polygon points="100,50 130,100 100,150 70,100" fill="#cd853f"/>
+    <polygon points="100,70 120,100 100,130 80,100" fill="#daa520"/>
+    
+    <rect x="60" y="180" width="80" height="20" fill="#8b4513"/>
+    <rect x="60" y="210" width="80" height="20" fill="#cd853f"/>
+    <rect x="60" y="240" width="80" height="20" fill="#daa520"/>
+  </g>
+  
+  <!-- Sound bowls (left corner) -->
+  <g transform="translate(300, 1200)">
+    <ellipse cx="0" cy="0" rx="40" ry="15" fill="#8b4513"/>
+    <ellipse cx="0" cy="-5" rx="35" ry="12" fill="#daa520"/>
+    
+    <ellipse cx="100" cy="0" rx="35" ry="12" fill="#cd853f"/>
+    <ellipse cx="100" cy="-4" rx="30" ry="10" fill="#daa520"/>
+    
+    <ellipse cx="50" cy="60" rx="30" ry="10" fill="#8b4513"/>
+    <ellipse cx="50" cy="57" rx="25" ry="8" fill="#a0522d"/>
+    
+    <!-- Mallets -->
+    <rect x="15" y="-30" width="3" height="25" fill="#654321"/>
+    <circle cx="16" cy="-32" r="4" fill="#8b4513"/>
+  </g>
+  
+  <!-- Essential oil diffuser (right corner) -->
+  <g transform="translate(3700, 1250)">
+    <rect x="0" y="0" width="60" height="80" fill="#8b4513" rx="5"/>
+    <rect x="10" y="10" width="40" height="60" fill="#daa520" rx="3"/>
+    
+    <!-- Steam/mist -->
+    <path d="M30,10 Q28,0 30,-10 Q32,-20 30,-30" stroke="#e0e0e0" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M30,10 Q32,0 30,-10 Q28,-20 30,-30" stroke="#e0e0e0" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M30,10 Q30,0 32,-10 Q30,-20 28,-30" stroke="#e0e0e0" stroke-width="1" fill="none" opacity="0.3"/>
+    
+    <!-- Control button -->
+    <circle cx="30" cy="40" r="5" fill="#654321"/>
+  </g>
+  
+  <!-- Plants for natural ambiance -->
+  <g transform="translate(100, 1100)">
+    <rect x="0" y="0" width="70" height="90" fill="#8b4513" rx="5"/>
+    <ellipse cx="35" cy="10" rx="40" ry="18" fill="#654321"/>
+    <circle cx="35" cy="-25" r="30" fill="#228b22"/>
+    <circle cx="20" cy="-40" r="20" fill="#32cd32"/>
+    <circle cx="50" cy="-35" r="25" fill="#32cd32"/>
+    <circle cx="35" cy="-55" r="15" fill="#9acd32"/>
+  </g>
+  
+  <g transform="translate(3900, 1100)">
+    <rect x="0" y="0" width="70" height="90" fill="#8b4513" rx="5"/>
+    <ellipse cx="35" cy="10" rx="40" ry="18" fill="#654321"/>
+    <circle cx="35" cy="-25" r="30" fill="#228b22"/>
+    <circle cx="25" cy="-40" r="20" fill="#32cd32"/>
+    <circle cx="45" cy="-35" r="25" fill="#32cd32"/>
+    <circle cx="35" cy="-55" r="15" fill="#9acd32"/>
+  </g>
+  
+  <!-- Ceiling -->
+  <rect x="0" y="0" width="4096" height="200" fill="#f8f8ff"/>
+  
+  <!-- Very soft ambient lighting -->
+  <circle cx="1024" cy="100" r="40" fill="#fff8dc" opacity="0.3"/>
+  <circle cx="2048" cy="100" r="45" fill="#fff8dc" opacity="0.4"/>
+  <circle cx="3072" cy="100" r="40" fill="#fff8dc" opacity="0.3"/>
+  
+  <!-- Gentle lighting effects -->
+  <ellipse cx="2048" cy="500" rx="1000" ry="500" fill="url(#softLight)"/>
+  <ellipse cx="800" cy="600" rx="300" ry="150" fill="url(#softLight)" opacity="0.5"/>
+  <ellipse cx="3300" cy="600" rx="300" ry="150" fill="url(#softLight)" opacity="0.5"/>
+  
+  <!-- Incense smoke effects -->
+  <ellipse cx="2050" cy="800" rx="200" ry="400" fill="url(#incenseSmoke)"/>
+  
+  <!-- Subtle floor reflections -->
+  <ellipse cx="2048" cy="1600" rx="200" ry="30" fill="#ffffff" opacity="0.05"/>
+  <ellipse cx="450" cy="1550" rx="100" ry="15" fill="#ffffff" opacity="0.04"/>
+  <ellipse cx="3600" cy="1550" rx="80" ry="12" fill="#ffffff" opacity="0.04"/>
+</svg>
