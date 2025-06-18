@@ -7,7 +7,7 @@ const virtualSpaces = [
   {
     id: 1,
     name: "Recepção Principal",
-    panorama: "https://pannellum.org/images/bma-0.jpg", // Demo 360° image - replace with your own
+    panorama: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa reception 360° view
     preview: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa reception area with modern African-inspired decor and warm lighting",
     hotspots: [
@@ -37,7 +37,7 @@ const virtualSpaces = [
   {
     id: 2,
     name: "Salas de Tratamento",
-    panorama: "https://pannellum.org/images/alma.jpg", // Demo 360° image - replace with your own
+    panorama: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa treatment room 360° view
     preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "360 degree view of spa treatment room with natural stone elements and warm African textiles",
     hotspots: [
@@ -61,6 +61,66 @@ const virtualSpaces = [
         type: "info", 
         text: "Sistema de Som", 
         info: "Música ambiente para relaxamento profundo" 
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: "Área de Relaxamento",
+    panorama: "https://images.unsplash.com/photo-1591343395082-e120087004b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Spa relaxation area 360° view
+    preview: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    alt: "Vista 360° da área de relaxamento com assentos confortáveis e iluminação ambiente",
+    hotspots: [
+      { 
+        pitch: 0, 
+        yaw: 0, 
+        type: "info", 
+        text: "Área de Descanso", 
+        info: "Sofás confortáveis para relaxamento pós-tratamento" 
+      },
+      { 
+        pitch: 15, 
+        yaw: 90, 
+        type: "info", 
+        text: "Fonte de Água", 
+        info: "Som relaxante da água corrente" 
+      },
+      { 
+        pitch: -10, 
+        yaw: 180, 
+        type: "info", 
+        text: "Vista Externa", 
+        info: "Conexão com a natureza angolana" 
+      }
+    ]
+  },
+  {
+    id: 4,
+    name: "Sala de Meditação",
+    panorama: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&h=1024&q=80", // Meditation room 360° view
+    preview: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    alt: "Vista 360° da sala de meditação com almofadas tradicionais e ambiente sereno",
+    hotspots: [
+      { 
+        pitch: 0, 
+        yaw: 45, 
+        type: "info", 
+        text: "Altar de Meditação", 
+        info: "Espaço sagrado para práticas espirituais" 
+      },
+      { 
+        pitch: -5, 
+        yaw: 135, 
+        type: "info", 
+        text: "Almofadas", 
+        info: "Almofadas artesanais angolanas" 
+      },
+      { 
+        pitch: 10, 
+        yaw: 270, 
+        type: "info", 
+        text: "Incenso Natural", 
+        info: "Fragrâncias de plantas medicinais locais" 
       }
     ]
   }
@@ -161,7 +221,7 @@ export default function VirtualTourSection() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {virtualSpaces.map((space, index) => (
             <motion.div
               key={space.id}
