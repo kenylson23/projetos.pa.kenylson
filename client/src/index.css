@@ -281,3 +281,28 @@
   outline: none;
   box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.5), 0 0 0 4px rgba(218, 165, 32, 0.2);
 }
+
+/* Ensure text colors are properly applied */
+.text-cream {
+  color: hsl(54, 100%, 95%) !important;
+}
+
+.text-cream\/80 {
+  color: hsla(54, 100%, 95%, 0.8) !important;
+}
+
+.text-cream\/60 {
+  color: hsla(54, 100%, 95%, 0.6) !important;
+}
+
+.text-golden-amber {
+  color: hsl(43, 74%, 66%) !important;
+}
+
+/* Fix label visibility in forms */
+.contact-form label {
+  color: hsl(54, 100%, 95%) !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
