@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import BreathingEffect from "./breathing-effect";
 import { Leaf, Heart, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 

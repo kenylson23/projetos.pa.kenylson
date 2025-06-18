@@ -111,11 +111,23 @@ export default function ServicesSection() {
                   ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' 
                   : '0 10px 25px -3px rgba(0, 0, 0, 0.1)'
               }}>
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  className="w-full h-64 object-cover"
-                />
+                <div className="relative overflow-hidden">
+                  <motion.img
+                    src={service.image}
+                    alt={service.alt}
+                    className="w-full h-64 object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  {hoveredCard === service.id && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    />
+                  )}
+                </div>
                 <CardContent className="p-8">
                   <h3 className={`text-2xl font-bold mb-4 ${
                     service.isSpecial ? 'text-white' : 'deep-brown'

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useParallax } from "@/hooks/use-parallax";
+import FloatingParticles from "./floating-particles";
 
 export default function HeroSection() {
   const { ref: heroRef, isInView } = useScrollAnimation();
@@ -20,6 +21,9 @@ export default function HeroSection() {
 
   return (
     <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Floating particles */}
+      <FloatingParticles />
+      
       {/* Parallax background */}
       <div
         className="absolute inset-0 parallax-element"
@@ -69,20 +73,52 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="space-x-4"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button
+          <motion.button
             onClick={scrollToServices}
-            className="inline-block bg-golden-amber hover:bg-warm-clay text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="relative inline-block bg-golden-amber text-white font-semibold py-4 px-8 rounded-full overflow-hidden group"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(218, 165, 32, 0.4)"
+            }}
+            whileTap={{ scale: 0.95 }}
           >
-            Explorar Serviços
-          </button>
-          <button
+            <motion.div
+              className="absolute inset-0 bg-warm-clay"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "0%" }}
+              transition={{ duration: 0.3 }}
+            />
+            <span className="relative z-10 flex items-center gap-2">
+              <Sparkles size={18} />
+              Explorar Serviços
+            </span>
+          </motion.button>
+          
+          <motion.button
             onClick={openWhatsApp}
-            className="inline-block bg-transparent border-2 border-white hover:bg-white hover:text-deep-brown text-white font-semibold py-4 px-8 rounded-full transition-all duration-300"
+            className="relative inline-block bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-full overflow-hidden group"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(255, 255, 255, 0.2)"
+            }}
+            whileTap={{ scale: 0.95 }}
           >
-            Reservar Agora
-          </button>
+            <motion.div
+              className="absolute inset-0 bg-white"
+              initial={{ scale: 0, opacity: 0 }}
+              whileHover={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.span 
+              className="relative z-10"
+              whileHover={{ color: "#4a3b32" }}
+              transition={{ duration: 0.3 }}
+            >
+              Reservar Agora
+            </motion.span>
+          </motion.button>
         </motion.div>
       </div>
 
