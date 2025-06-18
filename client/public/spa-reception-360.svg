@@ -3,17 +3,21 @@
   <!-- Background gradient -->
   <defs>
     <linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#f4f1eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#e8e3d8;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8e8e8;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="floorGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b6914;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#6b5211;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#d2691e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0522d;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="lightGradient" cx="50%" cy="30%" r="40%">
-      <stop offset="0%" style="stop-color:#fff8dc;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#fff8dc;stop-opacity:0" />
-    </radialGradient>
+    <linearGradient id="lightGradient" cx="50%" cy="20%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="carpetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#696969;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#555555;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
   <!-- Floor -->

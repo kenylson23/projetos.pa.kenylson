@@ -7,8 +7,8 @@ const virtualSpaces = [
   {
     id: 1,
     name: "Recepção Principal",
-    panorama: "/spa-reception-360.svg", // Imagem panorâmica 360° personalizada da recepção
-    preview: "/attached_assets/Gemini_Generated_Image_jk5qodjk5qodjk5q_1750251229412.png", // Sua imagem real da recepção para preview
+    panorama: "/spa-kenylson-reception-360.svg", // Imagem panorâmica 360° baseada na recepção real
+    preview: "/attached_assets/Gemini_Generated_Image_jk5qodjk5qodjk5q_1750252460925.png", // Sua imagem real da recepção para preview
     alt: "Vista panorâmica 360° da recepção do spa com decoração africana moderna e iluminação acolhedora",
     hotspots: [
       { 
@@ -37,7 +37,7 @@ const virtualSpaces = [
   {
     id: 2,
     name: "Salas de Tratamento",
-    panorama: "/spa-treatment-room-360.svg", // Imagem panorâmica 360° da sala de tratamento
+    panorama: "/spa-kenylson-treatment-360.svg", // Imagem panorâmica 360° da sala de tratamento
     preview: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "Vista panorâmica 360° da sala de tratamento com elementos naturais e têxteis africanos acolhedores",
     hotspots: [
@@ -67,7 +67,7 @@ const virtualSpaces = [
   {
     id: 3,
     name: "Área de Relaxamento",
-    panorama: "/spa-relaxation-360.svg", // Imagem panorâmica 360° da área de relaxamento
+    panorama: "/spa-kenylson-relaxation-360.svg", // Imagem panorâmica 360° da área de relaxamento
     preview: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     alt: "Vista panorâmica 360° da área de relaxamento com assentos confortáveis e fonte de água",
     hotspots: [
